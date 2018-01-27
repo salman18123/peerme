@@ -1,4 +1,4 @@
-const socket= io('http://localhost:3000')
+const socket= io('https://peerme.herokuapp.com/')
 $("#div-chat").hide()
 socket.on("already",()=>{
     alert("already exists")
@@ -40,7 +40,7 @@ video.play()
 //.then((stream)=>{
   //  playstream('localStream',stream)
 //})
-const peer = new Peer({key: 'vbtzghmxjapjh5mi'});
+const peer = new Peer({key: 'peerjs',host:'peerme.herokuapp.com',secure:true,port:443});
 
 peer.on('open',(id)=>{
     console.log(id)
