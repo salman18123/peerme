@@ -1,4 +1,4 @@
-const socket= io('https://peerme.herokuapp.com/')
+const socket= io('https://peerme.herokuapp.com')
 $("#div-chat").hide()
 socket.on("already",()=>{
     alert("already exists")

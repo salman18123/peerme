@@ -1,4 +1,4 @@
-const io=require('socket.io')(3000)
+const io=require('socket.io')(process.env.PORT||3000)
 const arrUserInfo=[]
 io.on('connection',socket=>{
     socket.on('new_user',(username)=>{
@@ -17,7 +17,7 @@ io.on('connection',socket=>{
         const index=arrUserInfo.findIndex(user=>{
             user.peerId===socket.peerId
         })
-        
+
         arrUserInfo.splice(index,1)
         io.emit('all_done',socket.peerId)
 
